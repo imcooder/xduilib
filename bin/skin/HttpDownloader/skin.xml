@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Window size="384,90" sizebox="4,4,4,4" caption="0,0,0,20" mininfo="384,90" roundcorner="4,4">
+    <Font name="宋体" size="12" bold="false" italic="false" />
+    <Font name="宋体" size="15" bold="true" italic="false" default="true" />
+    <HorizontalLayout name="bk" float="true" pos="0,0,0,0" width="384" height="90" bkimage="file=&apos;bg.png&apos;">
+        <Button name="tietu" visible="false" float="true" pos="0,0,0,0" width="384" height="90" bkcolor="#05132121" align="center" />
+        <Progress name="jdt" visible="false" float="true" pos="0,0,0,0" width="384" height="90" align="center" foreimage="file=&apos;progress_fore1.png&apos; xtiled=&apos;true&apos; ytiled=&apos;true&apos;" min="0" max="100" value="0" hor="true" />
+        <Text name="print" text="等待下载.." visible="false" float="true" pos="25,40,0,0" width="252" height="22" textpadding="2,0,2,0" textcolor="#FFFFFFFF" font="0" align="wrap" />
+        <Button name="stop" tooltip="停止下载.." float="true" pos="295,25,0,0" width="39" height="39" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="file=&apos;globe_disconnected1.png&apos;" hotimage="file=&apos;globe_disconnected1.png&apos;" />
+        <Button name="run" tooltip="开始下载.." float="true" pos="330,25,0,0" width="39" height="39" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="file=&apos;down_arrow1.png&apos;" hotimage="file=&apos;down_arrow1.png&apos;" />
+        <Button name="closebtn" tooltip="关闭" float="true" pos="359,5,0,0" width="20" height="20" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="file=&apos;close.png&apos;" hotimage="closeHover.png" />
+        <Text name="url" text="URL" float="true" pos="15,35,0,0" width="50" height="22" textpadding="2,0,2,0" textcolor="#FFFFFFFF" disabledtextcolor="#FFA7A6AA" font="0" align="wrap" />
+        <RichEdit />
+        <Button name="file" tooltip="打开文件选择保存路径.." float="true" pos="260,30,0,0" width="28" height="28" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="file=&apos;3d_stuff1.png&apos;" hotimage="file=&apos;3d_stuff1.png&apos;" />
+    </HorizontalLayout>
+</Window>
