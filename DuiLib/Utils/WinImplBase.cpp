@@ -1,14 +1,13 @@
-#ifndef WIN_IMPL_BASE_HPP
-#define WIN_IMPL_BASE_HPP
-
 #include "stdafx.h"
 
 namespace DuiLib
 {
 
+//////////////////////////////////////////////////////////////////////////
+
 LPBYTE WindowImplBase::m_lpResourceZIPBuffer=NULL;
 
-DUI_BASE_BEGIN_MESSAGE_MAP(WindowImplBase)
+DUI_BEGIN_MESSAGE_MAP(WindowImplBase,CNotifyPump)
 	DUI_ON_MSGTYPE(DUI_MSGTYPE_CLICK,OnClick)
 DUI_END_MESSAGE_MAP()
 
@@ -94,8 +93,34 @@ LRESULT WindowImplBase::OnNcActivate(UINT /*uMsg*/, WPARAM wParam, LPARAM /*lPar
 	return (wParam == 0) ? TRUE : FALSE;
 }
 
-LRESULT WindowImplBase::OnNcCalcSize(UINT /*uMsg*/, WPARAM /*wParam*/, LPARAM /*lParam*/, BOOL& /*bHandled*/)
+LRESULT WindowImplBase::OnNcCalcSize(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled)
 {
+	LPRECT pRect=NULL;
+
+	if ( wParam == TRUE)
+	{
+		LPNCCALCSIZE_PARAMS pParam = (LPNCCALCSIZE_PARAMS)lParam;
+		pRect=&pParam->rgrc[0];
+	}
+	else
+	{
+		pRect=(LPRECT)lParam;
+	}
+
+	if ( ::IsZoomed(m_hWnd))
+	{	// 最大化时，计算当前显示器最适合宽高度
+		MONITORINFO oMonitor = {};
+		oMonitor.cbSize = sizeof(oMonitor);
+		::GetMonitorInfo(::MonitorFromWindow(*this, MONITOR_DEFAULTTONEAREST), &oMonitor);
+		CDuiRect rcWork = oMonitor.rcWork;
+		CDuiRect rcMonitor = oMonitor.rcMonitor;
+		rcWork.Offset(-oMonitor.rcMonitor.left, -oMonitor.rcMonitor.top);
+
+		pRect->right = pRect->left + rcWork.GetWidth();
+		pRect->bottom = pRect->top + rcWork.GetHeight();
+		return WVR_REDRAW;
+	}
+
 	return 0;
 }
 
@@ -111,14 +136,34 @@ LRESULT WindowImplBase::OnNcHitTest(UINT uMsg, WPARAM wParam, LPARAM lParam, BOO
 
 	RECT rcClient;
 	::GetClientRect(*this, &rcClient);
+	
+	if( !::IsZoomed(*this) )
+	{
+		RECT rcSizeBox = m_PaintManager.GetSizeBox();
+		if( pt.y < rcClient.top + rcSizeBox.top )
+		{
+			if( pt.x < rcClient.left + rcSizeBox.left ) return HTTOPLEFT;
+			if( pt.x > rcClient.right - rcSizeBox.right ) return HTTOPRIGHT;
+			return HTTOP;
+		}
+		else if( pt.y > rcClient.bottom - rcSizeBox.bottom )
+		{
+			if( pt.x < rcClient.left + rcSizeBox.left ) return HTBOTTOMLEFT;
+			if( pt.x > rcClient.right - rcSizeBox.right ) return HTBOTTOMRIGHT;
+			return HTBOTTOM;
+		}
+
+		if( pt.x < rcClient.left + rcSizeBox.left ) return HTLEFT;
+		if( pt.x > rcClient.right - rcSizeBox.right ) return HTRIGHT;
+	}
 
 	RECT rcCaption = m_PaintManager.GetCaptionRect();
 	if( pt.x >= rcClient.left + rcCaption.left && pt.x < rcClient.right - rcCaption.right \
 		&& pt.y >= rcCaption.top && pt.y < rcCaption.bottom ) {
 			CControlUI* pControl = static_cast<CControlUI*>(m_PaintManager.FindControl(pt));
-			if( pControl && _tcsicmp(pControl->GetClass(), _T("ButtonUI")) != 0 && 
-				_tcsicmp(pControl->GetClass(), _T("OptionUI")) != 0 &&
-				_tcsicmp(pControl->GetClass(), _T("TextUI")) != 0 )
+			if( pControl && _tcsicmp(pControl->GetClass(), DUI_CTR_BUTTON) != 0 && 
+				_tcsicmp(pControl->GetClass(), DUI_CTR_OPTION) != 0 &&
+				_tcsicmp(pControl->GetClass(), DUI_CTR_TEXT) != 0 )
 				return HTCAPTION;
 	}
 
@@ -127,17 +172,24 @@ LRESULT WindowImplBase::OnNcHitTest(UINT uMsg, WPARAM wParam, LPARAM lParam, BOO
 
 LRESULT WindowImplBase::OnGetMinMaxInfo(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled)
 {
+	LPMINMAXINFO lpMMI = (LPMINMAXINFO) lParam;
+
 	MONITORINFO oMonitor = {};
 	oMonitor.cbSize = sizeof(oMonitor);
-	::GetMonitorInfo(::MonitorFromWindow(*this, MONITOR_DEFAULTTOPRIMARY), &oMonitor);
+	::GetMonitorInfo(::MonitorFromWindow(*this, MONITOR_DEFAULTTONEAREST), &oMonitor);
 	CDuiRect rcWork = oMonitor.rcWork;
+	CDuiRect rcMonitor = oMonitor.rcMonitor;
 	rcWork.Offset(-oMonitor.rcMonitor.left, -oMonitor.rcMonitor.top);
 
-	LPMINMAXINFO lpMMI = (LPMINMAXINFO) lParam;
+	// 计算最大化时，正确的原点坐标
 	lpMMI->ptMaxPosition.x	= rcWork.left;
 	lpMMI->ptMaxPosition.y	= rcWork.top;
-	lpMMI->ptMaxSize.x		= rcWork.right;
-	lpMMI->ptMaxSize.y		= rcWork.bottom;
+
+	lpMMI->ptMaxTrackSize.x =rcWork.GetWidth();
+	lpMMI->ptMaxTrackSize.y =rcWork.GetHeight();
+
+	lpMMI->ptMinTrackSize.x =m_PaintManager.GetMinInfo().cx;
+	lpMMI->ptMinTrackSize.y =m_PaintManager.GetMinInfo().cy;
 
 	bHandled = FALSE;
 	return 0;
@@ -193,6 +245,15 @@ LRESULT WindowImplBase::OnSysCommand(UINT uMsg, WPARAM wParam, LPARAM lParam, BO
 	LRESULT lRes = CWindowWnd::HandleMessage(uMsg, wParam, lParam);
 	if( ::IsZoomed(*this) != bZoomed )
 	{
+        CControlUI* pbtnMax = static_cast<CControlUI*>(m_PaintManager.FindControl(_T("maxbtn")));         // max button
+        CControlUI* pbtnRestore = static_cast<CControlUI*>(m_PaintManager.FindControl(_T("restorebtn"))); // restore button
+
+        // toggle status of max and restore button
+        if (pbtnMax && pbtnRestore)
+        {
+            pbtnMax->SetVisible(TRUE == bZoomed);
+            pbtnRestore->SetVisible(FALSE == bZoomed);
+        }
 	}
 #else
 	LRESULT lRes = CWindowWnd::HandleMessage(uMsg, wParam, lParam);
@@ -214,8 +275,12 @@ LRESULT WindowImplBase::OnCreate(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& 
 	m_PaintManager.AddPreMessageFilter(this);
 
 	CDialogBuilder builder;
-	CDuiString strResourcePath=m_PaintManager.GetInstancePath();
-	strResourcePath+=GetSkinFolder().GetData();
+	CDuiString strResourcePath=m_PaintManager.GetResourcePath();
+	if (strResourcePath.IsEmpty())
+	{
+		strResourcePath=m_PaintManager.GetInstancePath();
+		strResourcePath+=GetSkinFolder().GetData();
+	}
 	m_PaintManager.SetResourcePath(strResourcePath.GetData());
 
 	switch(GetResourceType())
@@ -270,7 +335,6 @@ LRESULT WindowImplBase::OnCreate(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& 
 	}
 	m_PaintManager.AttachDialog(pRoot);
 	m_PaintManager.AddNotifier(this);
-	m_PaintManager.SetBackgroundTransparent(TRUE);
 
 	InitWindow();
 	return 0;
@@ -365,33 +429,6 @@ LONG WindowImplBase::GetStyle()
 	return styleValue;
 }
 
-static const DUI_MSGMAP_ENTRY* DuiFindMessageEntry(const DUI_MSGMAP_ENTRY* lpEntry,TNotifyUI& msg )
-{
-	CDuiString sMsgType = msg.sType;
-	CDuiString sCtrlName = msg.pSender->GetName();
-
-	const DUI_MSGMAP_ENTRY* pMsgTypeEntry = NULL;
-	while (lpEntry->nSig != DuiSig_end)
-	{
-		if(lpEntry->sMsgType==sMsgType)
-		{
-			if(!lpEntry->sCtrlName.IsEmpty())
-			{
-				if(lpEntry->sCtrlName==sCtrlName)
-				{
-					return lpEntry;
-				}
-			}
-			else
-			{
-				pMsgTypeEntry = lpEntry;
-			}
-		}
-		lpEntry++;
-	}
-	return pMsgTypeEntry;
-}
-
 void WindowImplBase::OnClick(TNotifyUI& msg)
 {
 	CDuiString sCtrlName = msg.pSender->GetName();
@@ -420,44 +457,7 @@ void WindowImplBase::OnClick(TNotifyUI& msg)
 
 void WindowImplBase::Notify(TNotifyUI& msg)
 {
-	const DUI_MSGMAP* pMessageMap = NULL;
-	const DUI_MSGMAP_ENTRY* lpEntry = NULL;
-
-#ifndef UILIB_STATIC
-	for(pMessageMap = GetMessageMap(); pMessageMap!=NULL; pMessageMap = (*pMessageMap->pfnGetBaseMap)())
-#else
-	for(pMessageMap = GetMessageMap(); pMessageMap!=NULL; pMessageMap = pMessageMap->pBaseMap)
-#endif
-	{
-#ifndef UILIB_STATIC
-		ASSERT(pMessageMap != (*pMessageMap->pfnGetBaseMap)());
-#else
-		ASSERT(pMessageMap != pMessageMap->pBaseMap);
-#endif
-		if ((lpEntry = DuiFindMessageEntry(pMessageMap->lpEntries,msg)) != NULL)
-		{
-			goto LDispatch;
-		}
-	}
-	return;
-
-LDispatch:
-	union DuiMessageMapFunctions mmf;
-	mmf.pfn = lpEntry->pfn;
-
-	int nSig;
-	nSig = lpEntry->nSig;
-	switch (nSig)
-	{
-	default:
-		ASSERT(FALSE);
-		break;
-	case DuiSig_lwl:
-		break;
-	case DuiSig_vn:
-		(this->*mmf.pfn_Notify_vn)(msg);
-		break;
-	}
+	return CNotifyPump::NotifyPump(msg);
 }
 
 }

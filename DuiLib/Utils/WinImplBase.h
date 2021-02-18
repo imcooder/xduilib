@@ -1,8 +1,6 @@
 #ifndef WIN_IMPL_BASE_HPP
 #define WIN_IMPL_BASE_HPP
 
-#include "stdafx.h"
-
 namespace DuiLib
 {
 
@@ -14,8 +12,9 @@ namespace DuiLib
 		UILIB_ZIPRESOURCE,	// 来自资源的zip压缩包
 	};
 
-	class UILIB_API WindowImplBase
+	class DUILIB_API WindowImplBase
 		: public CWindowWnd
+		, public CNotifyPump
 		, public INotifyUI
 		, public IMessageFilterUI
 		, public IDialogBuilderCallback
@@ -34,7 +33,7 @@ namespace DuiLib
 		virtual CDuiString GetSkinFolder() = 0;
 		virtual CDuiString GetSkinFile() = 0;
 		virtual LPCTSTR GetWindowClassName(void) const = 0 ;
-		LRESULT ResponseDefaultKeyEvent(WPARAM wParam);
+		virtual LRESULT ResponseDefaultKeyEvent(WPARAM wParam);
 
 		CPaintManagerUI m_PaintManager;
 		static LPBYTE m_lpResourceZIPBuffer;
@@ -51,7 +50,7 @@ namespace DuiLib
 
 #if defined(WIN32) && !defined(UNDER_CE)
 		virtual LRESULT OnNcActivate(UINT /*uMsg*/, WPARAM wParam, LPARAM /*lParam*/, BOOL& bHandled);
-		virtual LRESULT OnNcCalcSize(UINT /*uMsg*/, WPARAM /*wParam*/, LPARAM /*lParam*/, BOOL& /*bHandled*/);
+		virtual LRESULT OnNcCalcSize(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled);
 		virtual LRESULT OnNcPaint(UINT /*uMsg*/, WPARAM /*wParam*/, LPARAM /*lParam*/, BOOL& /*bHandled*/);
 		virtual LRESULT OnNcHitTest(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled);
 		virtual LRESULT OnGetMinMaxInfo(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled);

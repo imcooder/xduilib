@@ -1,0 +1,11 @@
+D:/dev/xduilib/build/CMakeFiles/ALL_BUILD.dir
+D:/dev/xduilib/build/CMakeFiles/ZERO_CHECK.dir
+D:/dev/xduilib/build/DuiLib/CMakeFiles/duilib.dir
+D:/dev/xduilib/build/DuiDesigner/CMakeFiles/DuiDesigner.dir
+D:/dev/xduilib/build/360SafeDemo/CMakeFiles/360safedemo.dir
+D:/dev/xduilib/build/FlashDemo/CMakeFiles/FlashDemo.dir
+D:/dev/xduilib/build/GameDemo/CMakeFiles/GameDemo.dir
+D:/dev/xduilib/build/ListDemo/CMakeFiles/ListDemo.dir
+D:/dev/xduilib/build/MenuDemo/CMakeFiles/MenuDemo.dir
+D:/dev/xduilib/build/QQDemo/CMakeFiles/QQDemo.dir
+D:/dev/xduilib/build/RichListDemo/CMakeFiles/RichListDemo.dir

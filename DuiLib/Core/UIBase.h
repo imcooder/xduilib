@@ -40,13 +40,25 @@ namespace DuiLib {
 #define DUITRACEMSG _T("")
 #endif
 
-void UILIB_API DUI__Trace(LPCTSTR pstrFormat, ...);
-LPCTSTR UILIB_API DUI__TraceMsg(UINT uMsg);
+void DUILIB_API DUI__Trace(LPCTSTR pstrFormat, ...);
+LPCTSTR DUILIB_API DUI__TraceMsg(UINT uMsg);
 
 /////////////////////////////////////////////////////////////////////////////////////
 //
 
-class UILIB_API CWindowWnd
+class DUILIB_API CNotifyPump
+{
+public:
+	bool AddVirtualWnd(CDuiString strName,CNotifyPump* pObject);
+	bool RemoveVirtualWnd(CDuiString strName);
+	void NotifyPump(TNotifyUI& msg);
+	bool LoopDispatch(TNotifyUI& msg);
+	DUI_DECLARE_MESSAGE_MAP()
+private:
+	CDuiStringPtrMap m_VirtualWndMap;
+};
+
+class DUILIB_API CWindowWnd
 {
 public:
     CWindowWnd();
@@ -65,7 +77,7 @@ public:
     void ShowWindow(bool bShow = true, bool bTakeFocus = true);
     UINT ShowModal();
     void Close(UINT nRet = IDOK);
-    void CenterWindow();
+    void CenterWindow();	// 居中，支持扩展屏幕
     void SetIcon(UINT nRes);
 
     LRESULT SendMessage(UINT uMsg, WPARAM wParam = 0, LPARAM lParam = 0L);

@@ -490,6 +490,10 @@
 					>
 				</File>
 				<File
+					RelativePath=".\Utils\WinImplBase.cpp"
+					>
+				</File>
+				<File
 					RelativePath=".\Utils\XUnzip.cpp"
 					>
 					<FileConfiguration
@@ -602,15 +606,15 @@
 					>
 				</File>
 				<File
-					RelativePath=".\Control\UIComboBox.cpp"
-					>
-				</File>
-				<File
 					RelativePath=".\Control\UIDateTime.cpp"
 					>
 				</File>
 				<File
 					RelativePath=".\Control\UIEdit.cpp"
+					>
+				</File>
+				<File
+					RelativePath=".\Control\UIGifAnim.cpp"
 					>
 				</File>
 				<File
@@ -675,6 +679,14 @@
 					>
 				</File>
 				<File
+					RelativePath=".\Utils\FlashEventHandler.h"
+					>
+				</File>
+				<File
+					RelativePath=".\Utils\stb_image.h"
+					>
+				</File>
+				<File
 					RelativePath=".\Utils\UIDelegate.h"
 					>
 				</File>
@@ -684,10 +696,6 @@
 				</File>
 				<File
 					RelativePath=".\Utils\WebBrowserEventHandler.h"
-					>
-				</File>
-				<File
-					RelativePath=".\Utils\WinImplBase.cpp"
 					>
 				</File>
 				<File
@@ -775,15 +783,15 @@
 					>
 				</File>
 				<File
-					RelativePath=".\Control\UIComboBox.h"
-					>
-				</File>
-				<File
 					RelativePath=".\Control\UIDateTime.h"
 					>
 				</File>
 				<File
 					RelativePath=".\Control\UIEdit.h"
+					>
+				</File>
+				<File
+					RelativePath=".\Control\UIGifAnim.h"
 					>
 				</File>
 				<File

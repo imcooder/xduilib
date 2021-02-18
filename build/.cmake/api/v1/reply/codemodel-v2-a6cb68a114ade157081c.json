@@ -1,0 +1,1100 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9
+					],
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						1,
+						9
+					]
+				},
+				{
+					"build" : "DuiLib",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "DuiLib",
+					"targetIndexes" : 
+					[
+						10
+					]
+				},
+				{
+					"build" : "DuiDesigner",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "DuiDesigner",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "360SafeDemo",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "360SafeDemo",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "FlashDemo",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "FlashDemo",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "GameDemo",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "GameDemo",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "ListDemo",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "ListDemo",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "MenuDemo",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "MenuDemo",
+					"targetIndexes" : 
+					[
+						6
+					]
+				},
+				{
+					"build" : "QQDemo",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "QQDemo",
+					"targetIndexes" : 
+					[
+						7
+					]
+				},
+				{
+					"build" : "RichListDemo",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "RichListDemo",
+					"targetIndexes" : 
+					[
+						8
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9
+					],
+					"name" : "dui",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 3,
+					"id" : "360safedemo::@e2398512f61b37a99d43",
+					"jsonFile" : "target-360safedemo-Debug-4bdfa7776a91ea55ab50.json",
+					"name" : "360safedemo",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-Debug-bd5d4d238d687d713e42.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "DuiDesigner::@eafd538a8fbe268ce9fe",
+					"jsonFile" : "target-DuiDesigner-Debug-2e7dba0a716699520073.json",
+					"name" : "DuiDesigner",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "FlashDemo::@d3a3d0d503b4796ca7d3",
+					"jsonFile" : "target-FlashDemo-Debug-581bead5790d930b89d0.json",
+					"name" : "FlashDemo",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "GameDemo::@12a30ac62b68cc2b7fb5",
+					"jsonFile" : "target-GameDemo-Debug-ed3dabff551baeb227ec.json",
+					"name" : "GameDemo",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "ListDemo::@e6c4f89dbd88780602bb",
+					"jsonFile" : "target-ListDemo-Debug-d5988ef0b6e5436b37fb.json",
+					"name" : "ListDemo",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "MenuDemo::@dcea9a94f80a8734c9b5",
+					"jsonFile" : "target-MenuDemo-Debug-1ba84faf1329e50a4003.json",
+					"name" : "MenuDemo",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "QQDemo::@105a08c9dc68b78d672a",
+					"jsonFile" : "target-QQDemo-Debug-638a1a992d368172fec3.json",
+					"name" : "QQDemo",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 9,
+					"id" : "RichListDemo::@852c196ce676945f369b",
+					"jsonFile" : "target-RichListDemo-Debug-f629a9e6e233b0794b3d.json",
+					"name" : "RichListDemo",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-Debug-884791e733a740a39bc5.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "duilib::@4ba04f8c2bc1177f0c1a",
+					"jsonFile" : "target-duilib-Debug-e4ea8cd0e1672786da0b.json",
+					"name" : "duilib",
+					"projectIndex" : 0
+				}
+			]
+		},
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9
+					],
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						1,
+						9
+					]
+				},
+				{
+					"build" : "DuiLib",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "DuiLib",
+					"targetIndexes" : 
+					[
+						10
+					]
+				},
+				{
+					"build" : "DuiDesigner",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "DuiDesigner",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "360SafeDemo",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "360SafeDemo",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "FlashDemo",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "FlashDemo",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "GameDemo",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "GameDemo",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "ListDemo",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "ListDemo",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "MenuDemo",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "MenuDemo",
+					"targetIndexes" : 
+					[
+						6
+					]
+				},
+				{
+					"build" : "QQDemo",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "QQDemo",
+					"targetIndexes" : 
+					[
+						7
+					]
+				},
+				{
+					"build" : "RichListDemo",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "RichListDemo",
+					"targetIndexes" : 
+					[
+						8
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9
+					],
+					"name" : "dui",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 3,
+					"id" : "360safedemo::@e2398512f61b37a99d43",
+					"jsonFile" : "target-360safedemo-Release-f451b12d81ce957596c5.json",
+					"name" : "360safedemo",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-Release-bd5d4d238d687d713e42.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "DuiDesigner::@eafd538a8fbe268ce9fe",
+					"jsonFile" : "target-DuiDesigner-Release-ba2508c720e2b9b7f1a9.json",
+					"name" : "DuiDesigner",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "FlashDemo::@d3a3d0d503b4796ca7d3",
+					"jsonFile" : "target-FlashDemo-Release-171ea236eabb8176e6f1.json",
+					"name" : "FlashDemo",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "GameDemo::@12a30ac62b68cc2b7fb5",
+					"jsonFile" : "target-GameDemo-Release-6037369f8f883570d03b.json",
+					"name" : "GameDemo",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "ListDemo::@e6c4f89dbd88780602bb",
+					"jsonFile" : "target-ListDemo-Release-51d7902578a744e09673.json",
+					"name" : "ListDemo",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "MenuDemo::@dcea9a94f80a8734c9b5",
+					"jsonFile" : "target-MenuDemo-Release-de4698a02a0315bccc45.json",
+					"name" : "MenuDemo",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "QQDemo::@105a08c9dc68b78d672a",
+					"jsonFile" : "target-QQDemo-Release-100781efe50f0da14bf4.json",
+					"name" : "QQDemo",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 9,
+					"id" : "RichListDemo::@852c196ce676945f369b",
+					"jsonFile" : "target-RichListDemo-Release-ab6e76335bdfb85c284e.json",
+					"name" : "RichListDemo",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-Release-884791e733a740a39bc5.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "duilib::@4ba04f8c2bc1177f0c1a",
+					"jsonFile" : "target-duilib-Release-bbcf6931939149c915ba.json",
+					"name" : "duilib",
+					"projectIndex" : 0
+				}
+			]
+		},
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9
+					],
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						1,
+						9
+					]
+				},
+				{
+					"build" : "DuiLib",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "DuiLib",
+					"targetIndexes" : 
+					[
+						10
+					]
+				},
+				{
+					"build" : "DuiDesigner",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "DuiDesigner",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "360SafeDemo",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "360SafeDemo",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "FlashDemo",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "FlashDemo",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "GameDemo",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "GameDemo",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "ListDemo",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "ListDemo",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "MenuDemo",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "MenuDemo",
+					"targetIndexes" : 
+					[
+						6
+					]
+				},
+				{
+					"build" : "QQDemo",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "QQDemo",
+					"targetIndexes" : 
+					[
+						7
+					]
+				},
+				{
+					"build" : "RichListDemo",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "RichListDemo",
+					"targetIndexes" : 
+					[
+						8
+					]
+				}
+			],
+			"name" : "MinSizeRel",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9
+					],
+					"name" : "dui",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 3,
+					"id" : "360safedemo::@e2398512f61b37a99d43",
+					"jsonFile" : "target-360safedemo-MinSizeRel-da83f31a31a0042e3cef.json",
+					"name" : "360safedemo",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-MinSizeRel-bd5d4d238d687d713e42.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "DuiDesigner::@eafd538a8fbe268ce9fe",
+					"jsonFile" : "target-DuiDesigner-MinSizeRel-51ee75165f2ac0103d0c.json",
+					"name" : "DuiDesigner",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "FlashDemo::@d3a3d0d503b4796ca7d3",
+					"jsonFile" : "target-FlashDemo-MinSizeRel-f5945695bd616ffdc7b9.json",
+					"name" : "FlashDemo",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "GameDemo::@12a30ac62b68cc2b7fb5",
+					"jsonFile" : "target-GameDemo-MinSizeRel-75edcf9c292bb38a0425.json",
+					"name" : "GameDemo",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "ListDemo::@e6c4f89dbd88780602bb",
+					"jsonFile" : "target-ListDemo-MinSizeRel-82eccc01d609b2567c58.json",
+					"name" : "ListDemo",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "MenuDemo::@dcea9a94f80a8734c9b5",
+					"jsonFile" : "target-MenuDemo-MinSizeRel-0f1fe3dad423263ed3f3.json",
+					"name" : "MenuDemo",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "QQDemo::@105a08c9dc68b78d672a",
+					"jsonFile" : "target-QQDemo-MinSizeRel-74236ec00d9ad6404748.json",
+					"name" : "QQDemo",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 9,
+					"id" : "RichListDemo::@852c196ce676945f369b",
+					"jsonFile" : "target-RichListDemo-MinSizeRel-d4944325e19386d45385.json",
+					"name" : "RichListDemo",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-MinSizeRel-884791e733a740a39bc5.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "duilib::@4ba04f8c2bc1177f0c1a",
+					"jsonFile" : "target-duilib-MinSizeRel-c35ee449fbd0e63849dd.json",
+					"name" : "duilib",
+					"projectIndex" : 0
+				}
+			]
+		},
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9
+					],
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						1,
+						9
+					]
+				},
+				{
+					"build" : "DuiLib",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "DuiLib",
+					"targetIndexes" : 
+					[
+						10
+					]
+				},
+				{
+					"build" : "DuiDesigner",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "DuiDesigner",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "360SafeDemo",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "360SafeDemo",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "FlashDemo",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "FlashDemo",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "GameDemo",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "GameDemo",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "ListDemo",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "ListDemo",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "MenuDemo",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "MenuDemo",
+					"targetIndexes" : 
+					[
+						6
+					]
+				},
+				{
+					"build" : "QQDemo",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "QQDemo",
+					"targetIndexes" : 
+					[
+						7
+					]
+				},
+				{
+					"build" : "RichListDemo",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "RichListDemo",
+					"targetIndexes" : 
+					[
+						8
+					]
+				}
+			],
+			"name" : "RelWithDebInfo",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9
+					],
+					"name" : "dui",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 3,
+					"id" : "360safedemo::@e2398512f61b37a99d43",
+					"jsonFile" : "target-360safedemo-RelWithDebInfo-38867899494ca39c97c0.json",
+					"name" : "360safedemo",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-bd5d4d238d687d713e42.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "DuiDesigner::@eafd538a8fbe268ce9fe",
+					"jsonFile" : "target-DuiDesigner-RelWithDebInfo-0ac4013292132b4838b6.json",
+					"name" : "DuiDesigner",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "FlashDemo::@d3a3d0d503b4796ca7d3",
+					"jsonFile" : "target-FlashDemo-RelWithDebInfo-1d28a9568f400f7f67cf.json",
+					"name" : "FlashDemo",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "GameDemo::@12a30ac62b68cc2b7fb5",
+					"jsonFile" : "target-GameDemo-RelWithDebInfo-407902abe0087fc9b397.json",
+					"name" : "GameDemo",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "ListDemo::@e6c4f89dbd88780602bb",
+					"jsonFile" : "target-ListDemo-RelWithDebInfo-de38eca79604223429ca.json",
+					"name" : "ListDemo",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "MenuDemo::@dcea9a94f80a8734c9b5",
+					"jsonFile" : "target-MenuDemo-RelWithDebInfo-dbfc5d6227c011a7b330.json",
+					"name" : "MenuDemo",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "QQDemo::@105a08c9dc68b78d672a",
+					"jsonFile" : "target-QQDemo-RelWithDebInfo-69602e1c44dddd827cf9.json",
+					"name" : "QQDemo",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 9,
+					"id" : "RichListDemo::@852c196ce676945f369b",
+					"jsonFile" : "target-RichListDemo-RelWithDebInfo-960941fdb54d56d64ce8.json",
+					"name" : "RichListDemo",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-RelWithDebInfo-884791e733a740a39bc5.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "duilib::@4ba04f8c2bc1177f0c1a",
+					"jsonFile" : "target-duilib-RelWithDebInfo-4a121da6535d7bb43d60.json",
+					"name" : "duilib",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/dev/xduilib/build",
+		"source" : "D:/dev/xduilib"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 1
+	}
+}

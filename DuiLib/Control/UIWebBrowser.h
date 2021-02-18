@@ -8,10 +8,11 @@
 
 namespace DuiLib
 {
-	class UILIB_API CWebBrowserUI
+	class DUILIB_API CWebBrowserUI
 		: public CActiveXUI
 		, public IDocHostUIHandler
 		, public IServiceProvider
+		, public IOleCommandTarget
 		, public IDispatch
 		, public ITranslateAccelerator
 	{
@@ -30,14 +31,17 @@ namespace DuiLib
 		void Navigate2(LPCTSTR lpszUrl);
 		void Refresh();
 		void Refresh2(int Level);
+		void GoBack();
+		void GoForward();
 		void NavigateHomePage();
 		void NavigateUrl(LPCTSTR lpszUrl);
 		virtual bool DoCreateControl();
+		IWebBrowser2* GetWebBrowser2(void);
+		IDispatch*		   GetHtmlWindow();
 		static DISPID FindId(IDispatch *pObj, LPOLESTR pName);
 		static HRESULT InvokeMethod(IDispatch *pObj, LPOLESTR pMehtod, VARIANT *pVarResult, VARIANT *ps, int cArgs);
 		static HRESULT GetProperty(IDispatch *pObj, LPOLESTR pName, VARIANT *pValue);
 		static HRESULT SetProperty(IDispatch *pObj, LPOLESTR pName, VARIANT *pValue);
-		IDispatch*		   GetHtmlWindow();
 
 	protected:
 		IWebBrowser2*			m_pWebBrowser2; //ä¯ÀÀÆ÷Ö¸Õë
@@ -55,6 +59,7 @@ namespace DuiLib
 		void BeforeNavigate2( IDispatch *pDisp,VARIANT *&url,VARIANT *&Flags,VARIANT *&TargetFrameName,VARIANT *&PostData,VARIANT *&Headers,VARIANT_BOOL *&Cancel );
 		void NavigateError(IDispatch *pDisp,VARIANT * &url,VARIANT *&TargetFrameName,VARIANT *&StatusCode,VARIANT_BOOL *&Cancel);
 		void NavigateComplete2(IDispatch *pDisp,VARIANT *&url);
+		void DocumentComplete(IDispatch *pDisp,VARIANT *&url); 
 		void ProgressChange(LONG nProgress, LONG nProgressMax);
 		void NewWindow3(IDispatch **pDisp, VARIANT_BOOL *&Cancel, DWORD dwFlags, BSTR bstrUrlContext, BSTR bstrUrl);
 		void CommandStateChange(long Command,VARIANT_BOOL Enable);
@@ -93,6 +98,10 @@ namespace DuiLib
 
 		// IServiceProvider
 		STDMETHOD(QueryService)(REFGUID guidService, REFIID riid, void** ppvObject);
+
+		// IOleCommandTarget
+		virtual HRESULT STDMETHODCALLTYPE QueryStatus( __RPC__in_opt const GUID *pguidCmdGroup, ULONG cCmds, __RPC__inout_ecount_full(cCmds ) OLECMD prgCmds[ ], __RPC__inout_opt OLECMDTEXT *pCmdText);
+		virtual HRESULT STDMETHODCALLTYPE Exec( __RPC__in_opt const GUID *pguidCmdGroup, DWORD nCmdID, DWORD nCmdexecopt, __RPC__in_opt VARIANT *pvaIn, __RPC__inout_opt VARIANT *pvaOut );
 
 		// IDownloadManager
 		STDMETHOD(Download)( 
